@@ -1,5 +1,7 @@
 package com.phinzin.myhome.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +17,13 @@ public class MyHomeService {
     public MyHomeService(MyHomeRepository myHomeRepository){
         this.myHomeRepository = myHomeRepository;
     }
-    public Iterable<MyHome> getAllItems(){
-        return this.myHomeRepository.findAll();
+    public List<MyHome> getAllItems(){
+        return this.myHomeRepository.findAllItems();
+    }
+    public MyHome addItem(MyHome myHome) {
+        return this.myHomeRepository.save(myHome);
+    }
+    public MyHome editItem(MyHome myHome) {
+        return this.myHomeRepository.save(myHome);
     }
 }
