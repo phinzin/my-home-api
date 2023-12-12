@@ -35,6 +35,8 @@ public class MyHomeController {
     }
     @PostMapping()
     public ResponseEntity<String> addItem(@RequestBody MyHome myHome){
+        myHome.setId(null);
+        myHome.setPartitionKey(null);
         this.myHomeService.addItem(myHome);
         return new ResponseEntity<>(HttpStatus.OK);
     }
