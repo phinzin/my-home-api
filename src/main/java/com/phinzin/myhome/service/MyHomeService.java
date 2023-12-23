@@ -26,4 +26,7 @@ public class MyHomeService {
     public MyHome editItem(MyHome myHome) {
         return this.myHomeRepository.save(myHome);
     }
+    public void deleteItem(String id) {
+        this.myHomeRepository.deleteById(id);
+    }
 }
