@@ -1,6 +1,7 @@
 package com.phinzin.myhome.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,9 @@ public class MyHomeService {
         return this.myHomeRepository.save(myHome);
     }
     public void deleteItem(String id) {
-        this.myHomeRepository.deleteById(id, null);
+        Optional<MyHome> item = this.myHomeRepository.findById(id);
+        if(item != null){
+            this.myHomeRepository.delete(item.get());
+        }
     }
 }
