@@ -11,7 +11,6 @@ import com.phinzin.myhome.repository.MyHomeRepository;
 
 @Service
 public class MyHomeService {
-    private String partitionKey = "partitionKey";
     private MyHomeRepository myHomeRepository;
 
     @Autowired
@@ -28,6 +27,6 @@ public class MyHomeService {
         return this.myHomeRepository.save(myHome);
     }
     public void deleteItem(String id) {
-        this.myHomeRepository.deleteById(id, new PartitionKey(partitionKey));
+        this.myHomeRepository.deleteById(id, null);
     }
 }
