@@ -5,12 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.azure.cosmos.models.PartitionKey;
 import com.phinzin.myhome.entity.MyHome;
 import com.phinzin.myhome.repository.MyHomeRepository;
 
 @Service
 public class MyHomeService {
-    
+    private String partitionKey = "partitionKey";
     private MyHomeRepository myHomeRepository;
 
     @Autowired
@@ -27,6 +28,6 @@ public class MyHomeService {
         return this.myHomeRepository.save(myHome);
     }
     public void deleteItem(String id) {
-        this.myHomeRepository.deleteById(id);
+        this.myHomeRepository.deleteById(id, new PartitionKey(partitionKey));
     }
 }
