@@ -7,13 +7,29 @@ azure:
     database: ToDoList
 
 # azure active directory properties
+# spring:
+#  cloud:
+#    azure:
+#      active-directory:
+#        enabled: true
+#        profile:
+#          tenant-id: fdeed0a6-b670-4842-b988-329ad2a45ac2
+#        credential:
+#          client-id: 640ebbb6-797d-473e-b8ce-954457f70a3b
+#          client-secret: 4be8Q~uZDx7kKbh0NaXRqTW5icNMmVP23POC8bOj
 spring:
- cloud:
-   azure:
-     active-directory:
-       enabled: true
-       profile:
-         tenant-id: fdeed0a6-b670-4842-b988-329ad2a45ac2
-       credential:
-         client-id: 640ebbb6-797d-473e-b8ce-954457f70a3b
-         client-secret: 4be8Q~uZDx7kKbh0NaXRqTW5icNMmVP23POC8bOj
+  security:
+    oauth2:
+      client:
+        provider:
+          azure:
+            issuer-uri: https://login.microsoftonline.com/fdeed0a6-b670-4842-b988-329ad2a45ac2/v2.0
+        registration:
+          azure-dev:
+            provider: azure
+            client-id: 640ebbb6-797d-473e-b8ce-954457f70a3b
+            client-secret: 4be8Q~uZDx7kKbh0NaXRqTW5icNMmVP23POC8bOj
+            scope:
+            - openid
+            - email
+            - profile         
