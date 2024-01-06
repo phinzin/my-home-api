@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.azure.cosmos.models.PartitionKey;
 import com.phinzin.myhome.entity.MyHome;
 import com.phinzin.myhome.repository.MyHomeRepository;
 

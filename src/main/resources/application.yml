@@ -1,0 +1,19 @@
+
+azure:
+  cosmos:
+    uri: https://cmdb.documents.azure.com:443/
+    key: syOmOZBVqn2wOvp9dPR6LTg2bqrg586DFeINsblM96MPcXxNJdJHh4lIUjfafmY4DuaQSs8chC9wACDbnfHCUw==
+    secondaryKey: Czf4nFhYA0vwXpvrNQOU0cZUkivs5MI0vUubE9eFErCEp02HvV0YcxbsGQPwTE1cUbpYNaQDBYw3ACDbqs79Pg==
+    database: ToDoList
+
+# azure active directory properties
+spring:
+ cloud:
+   azure:
+     active-directory:
+       enabled: true
+       profile:
+         tenant-id: fdeed0a6-b670-4842-b988-329ad2a45ac2
+       credential:
+         client-id: 640ebbb6-797d-473e-b8ce-954457f70a3b
+         client-secret: 4be8Q~uZDx7kKbh0NaXRqTW5icNMmVP23POC8bOj
